@@ -96,6 +96,8 @@ class PromptFormat_raw_completion(PromptFormat):
 
     def print_bot_name(self):
         return True
+    def print_extra_newline(self):
+        return True
 
 
 class PromptFormat_llama(PromptFormat):
