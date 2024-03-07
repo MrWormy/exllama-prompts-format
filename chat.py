@@ -239,6 +239,7 @@ delim_overflow = ""
 
 print_timings = args.print_timings
 amnesia = args.amnesia
+clear_ctxt = False
 
 # Main loop
 
@@ -260,7 +261,12 @@ while True:
                 line = input()
             except EOFError:
                 break
-            contents.append(line)
+            if line == "cln_ctx":
+                contents = []
+                user_prompts = []
+                responses_ids = []
+            else:
+                contents.append(line)
         up = '\n'.join(contents)
     else:
         up = input(col_user + username + ": " + col_default).strip()
