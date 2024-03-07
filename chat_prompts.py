@@ -89,7 +89,8 @@ class PromptFormat_raw_completion(PromptFormat):
 
     def stop_conditions(self, tokenizer):
         return \
-            [tokenizer.eos_token_id]
+            ["<|endoftext|>",
+             tokenizer.eos_token_id]
 
     def encoding_options(self):
         return False, False, False
